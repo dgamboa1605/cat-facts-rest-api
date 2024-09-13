@@ -1,25 +1,18 @@
 # pylint: disable=R0903
 """
-This module defines the `Fact` class, which is a Pydantic model representing a fact entity.
+Module for defining the 'User' data model using Pydantic.
 """
 
 from pydantic import BaseModel, Field
-from models.fact.status import Status
+from models.user.name import Name
 
-
-class Fact(BaseModel):
+class User(BaseModel):
     """
-    Represents a fact entity.
+    Represents a user entity.
     """
     id: str = Field(..., alias="_id")
-    user: str
-    text: str
-    type: str
-    deleted: bool
-    createdAt: str
-    updatedAt: str
-    v: int = Field(..., alias="__v")
-    status: Status
+    name: Name
+    photo: str
 
     class Config:
         """

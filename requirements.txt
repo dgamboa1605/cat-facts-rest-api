@@ -3,3 +3,4 @@ pytest
 allure-pytest
 jsonschema
 pydantic
+pylint
